@@ -7,8 +7,8 @@ class Navigation
       @load_navigation_from_file = File.read(file)
     end
  
-    def create_parameters_from_input
-      process_navigation
+    def create_parameters_from_instructions
+      interprets_navigation
       separate_plateau_from_rovers
       create_rovers_initial_and_navigation_arrays
     end
@@ -33,16 +33,16 @@ class Navigation
       @navigation_array = @load_navigation_from_file.split(/\n\n/)
     end
 
-    def remove_last_paragraph
-      last_line = @navigation_array.pop
-      last_line.gsub!("\n","")
-      @navigation_array.push(last_line)
-    end
-
     def remove_spaces
       @navigation_array.each do |element|
         element.gsub!(" ","")
       end
+    end
+    
+    def remove_last_paragraph
+      last_line = @navigation_array.pop
+      last_line.gsub!("\n","")
+      @navigation_array.push(last_line)
     end
 
     def get_plateau_parameter
@@ -85,6 +85,6 @@ class Navigation
         elsif index % 2 != 0
           @rover_navigation << element
         end
-       end
+      end
     end
 end

@@ -2,13 +2,14 @@ class Rover
     
     COMPASS = ['N', 'E', 'S', 'W']
     
-    attr_accessor :id, :x_coordinate, :y_coordinate, :direction, :moved
+    attr_accessor :id, :x_coordinate, :y_coordinate, :direction, :status, :moved
     
     def initialize(id, x, y, direction)
         @id = id
         @x_coordinate = x
         @y_coordinate = y
         @direction = direction
+        @status = status
         @moved = false
     end
     
@@ -41,6 +42,10 @@ class Rover
     
     def state_coordinates_and_direction
      "#{@x_coordinate}, #{@y_coordinate}, pointing #{@direction}"
+    end
+    
+    def set_rover_status
+     @status = "Lost"
     end
     
     def set_moved_status

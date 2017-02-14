@@ -2,8 +2,8 @@
 
 4 4 E
 
-MRM (5 3 S)
+MRM 
 
 1 5 S
 
-MRM (2 4 E)
+MRM 
