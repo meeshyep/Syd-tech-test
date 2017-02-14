@@ -46,10 +46,10 @@ describe Rover do
       rover = described_class.new(1,3,"N")
       letter = ["L", "M", "L", "M", "L", "M", "L", "M", "M"]
       letter.each do |letter|
-      rover.give_instructions_to_rover(letter)
-     end
+        rover.give_instructions_to_rover(letter)
+      end
       expect(rover.state_coordinates_and_direction).to eq "1, 4, pointing N"
      end
     end
     
-end
+   end
