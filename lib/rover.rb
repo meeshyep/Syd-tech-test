@@ -2,7 +2,7 @@ class Rover
     
     COMPASS = ['N', 'E', 'S', 'W']
     
-    attr_accessor = :x_coordinate, :y_coordinate, :direction 
+    attr_accessor :x_coordinate, :y_coordinate, :direction 
     
     def initialize(x, y, direction)
         @x_coordinate = x
