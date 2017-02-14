@@ -28,14 +28,12 @@ describe Nasa_Controller do
   context '#sending instructions' do
     
     it 'talks to the rovers' do
-      #response = "string"
       subject.create_course_details
       subject.send_navigation_to_rover(subject.current_rovers[0], ["M","R","M","M"], 1)
       expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "5, 2, pointing S"
     end
     
     it 'doesn\'t talk to lost rovers' do
-      #response = "string"
       subject.create_course_details
       subject.send_navigation_to_rover(subject.current_rovers[0], ["M","M","M","M","M","M","M","M"], 1)
       expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "6, 4, pointing E"
