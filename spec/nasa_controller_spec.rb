@@ -21,7 +21,7 @@ describe Nasa_Controller do
     it 'navigates the rovers' do
       subject.create_course_details
       subject.navigate_rovers
-      expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "5, 3, pointing S"
+      expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "1, 3, pointing N"
     end
   end
 
@@ -30,13 +30,13 @@ describe Nasa_Controller do
     it 'talks to the rovers' do
       subject.create_course_details
       subject.send_navigation_to_rover(subject.current_rovers[0], ["M","R","M","M"], 1)
-      expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "5, 2, pointing S"
+      expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "3, 3, pointing E"
     end
     
     it 'doesn\'t talk to lost rovers' do
       subject.create_course_details
       subject.send_navigation_to_rover(subject.current_rovers[0], ["M","M","M","M","M","M","M","M"], 1)
-      expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "6, 4, pointing E"
+      expect(subject.current_rovers[0].state_coordinates_and_direction).to eq "1, 6, pointing N"
     end
   end
 

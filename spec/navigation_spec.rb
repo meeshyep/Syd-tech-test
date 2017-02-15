@@ -34,8 +34,8 @@ require 'navigation'
       subject.interprets_navigation
       subject.separate_plateau_from_rovers
       subject.create_rovers_initial_and_navigation_arrays
-      expect(subject.rover_initial_params).to eq [[4, 4, "E"], [2, 3, "N"], [4, 1, "E"], [1, 4, "S"]]
-      expect(subject.rover_navigation).to eq [["M", "R", "M"], ["L", "R", "L"], ["M", "L", "M", "M", "L", "M"], ["M", "R", "M", "R", "M", "L", "M"]]
+      expect(subject.rover_initial_params).to eq [[1, 2, "N"], [3, 3, "E"], [4, 1, "E"], [1, 4, "S"]]
+      expect(subject.rover_navigation).to eq [["L", "M", "L", "M", "L", "M", "L", "M", "M"], ["M", "M", "R", "M", "M", "R", "M", "R", "R", "M"], ["M", "L", "M", "M", "L", "M"], ["M", "R", "M", "R", "M", "L", "M"]]
     end
   end
 
@@ -65,7 +65,7 @@ require 'navigation'
       subject.interprets_navigation
       subject.separate_plateau_from_rovers
       subject.remove_spaces
-      expect(subject.navigation_array).to eq ["44E", "MRM", "23N", "LRL", "41E", "MLMMLM", "14S", "MRMRMLM"]
+      expect(subject.navigation_array).to eq ["12N", "LMLMLMLMM", "33E", "MMRMMRMRRM", "41E", "MLMMLM", "14S", "MRMRMLM"]
     end
   end
 
@@ -75,7 +75,7 @@ require 'navigation'
       subject.separate_plateau_from_rovers
       subject.remove_spaces
       subject.edit_navigation
-      expect(subject.array_of_navigation_arrays[3]).to eq ["L", "R", "L"]
+      expect(subject.array_of_navigation_arrays[3]).to eq ["M", "M", "R", "M", "M", "R", "M", "R", "R", "M"]
       expect(subject.array_of_navigation_arrays[4]).to eq [4, 1, "E"]
     end
   end

@@ -1,6 +1,6 @@
 require_relative './lib/nasa_controller'
 
-puts "Welcome to the Mars Rover Mission"
+puts "NASA: Mars Rover"
 puts ""
 puts "Loading the instructions from instructions.txt"
 mission = Nasa_Controller.new

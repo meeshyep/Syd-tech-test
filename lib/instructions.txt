@@ -1,9 +1,9 @@
 5 5
 
-4 4 E
+1 2 N
 
-MRM 
+LMLMLMLMM  
 
-1 5 S
+3 3 E
 
-MRM 
+MMRMMRMRRM 
